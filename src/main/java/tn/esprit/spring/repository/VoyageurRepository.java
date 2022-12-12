@@ -7,7 +7,7 @@ import tn.esprit.spring.entities.Voyageur;
 
 
 
-@Repository
+
 public interface VoyageurRepository extends CrudRepository<Voyageur, Long> {
 
 }
