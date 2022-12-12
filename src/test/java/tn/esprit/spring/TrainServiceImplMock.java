@@ -1,4 +1,4 @@
-package tn.esprit.spring;
+/*package tn.esprit.spring;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import tn.esprit.spring.entities.Train;
@@ -54,7 +54,7 @@ public class TrainServiceImplMock {
     public void init() {
         MockitoAnnotations.initMocks(this);
     }
-/*    @Test
+    @Test
     public void retrieveAllTrainsTest() {
         when(sr.findAll()).thenReturn(listTrains);
         List<Train> result = ss.recupererAll();
@@ -77,6 +77,6 @@ public class TrainServiceImplMock {
         when(sr.findById(1L)).thenReturn(Optional.ofNullable(null));
          Train result = ss.deleteSTrain(1L);
         Assertions.assertNull(result);
-    } */
+    } 
 
-    }
+    }*/
