@@ -12,4 +12,6 @@ public interface ITrainService {
      List<Train> ListerTrainsIndirects(Ville nomGareDepart, Ville nomGareArrivee);
      void DesaffecterVoyageursTrain(Ville nomGareDepart, Ville nomGareArrivee, double heureDepart);
      void TrainsEnGare();
+     List<Train> recupererAll();
+     void supprimerTrain(Train t);
 }

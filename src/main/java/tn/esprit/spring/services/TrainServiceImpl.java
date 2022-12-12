@@ -45,6 +45,10 @@ public class TrainServiceImpl implements ITrainService {
         trainRepository.save(t);
     }
 
+    public void supprimerTrain(Train t) {
+        trainRepository.delete(t);
+    }
+
     public int TrainPlacesLibres(Ville nomGareDepart) {
         int cpt = 0;
         int occ = 0;
@@ -143,6 +147,12 @@ public class TrainServiceImpl implements ITrainService {
 
             }
         }
+    }
+
+    @Override
+    public List<Train> recupererAll() {
+        List<Train> list = (List<Train>) trainRepository.findAll();
+        return list;
     }
 
 
