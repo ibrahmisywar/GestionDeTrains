@@ -152,8 +152,7 @@ public class TrainServiceImpl implements ITrainService {
 
     @Override
     public List<Train> recupererAll() {
-        List<Train> list = (List<Train>) trainRepository.findAll();
-        return list;
+        return (List<Train>) trainRepository.findAll();
     }
 
 

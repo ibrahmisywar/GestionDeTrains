@@ -12,7 +12,13 @@ import javax.persistence.Id;
 @Entity
 public class Train implements Serializable {
 
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long idTrain;
 
