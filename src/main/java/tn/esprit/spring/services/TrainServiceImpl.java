@@ -27,7 +27,7 @@ public class TrainServiceImpl implements ITrainService {
 
 
     @Autowired
-    VoyageurRepository VoyageurRepository;
+    VoyageurRepository voyageurRepository;
 
 
     @Autowired
@@ -104,7 +104,7 @@ public class TrainServiceImpl implements ITrainService {
     public void affecterTainAVoyageur(Long idVoyageur, Ville nomGareDepart, Ville nomGareArrivee, double heureDepart) {
 
 
-        Voyageur c = VoyageurRepository.findById(idVoyageur).get();
+        Voyageur c = voyageurRepository.findById(idVoyageur).get();
         List<Voyage> lesvoyages = new ArrayList<>();
         lesvoyages = voyageRepository.rechercheVoyage(nomGareDepart, nomGareDepart, heureDepart);
         for (int i = 0; i < lesvoyages.size(); i++) {

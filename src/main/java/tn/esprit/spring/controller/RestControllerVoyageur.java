@@ -1,16 +1,12 @@
 package tn.esprit.spring.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import tn.esprit.spring.entities.Voyageur;
 import tn.esprit.spring.entities.Train;
 import tn.esprit.spring.entities.Ville;
 import tn.esprit.spring.entities.Voyage;
-import tn.esprit.spring.repository.TrainRepository;
 import tn.esprit.spring.services.IVoyageurService;
 import tn.esprit.spring.services.ITrainService;
 import tn.esprit.spring.services.IVoyageService;
@@ -28,7 +24,6 @@ public class RestControllerVoyageur {
     @Autowired
     IVoyageurService iVoyageurservice;
 
-    //http://localhost:8083/SpringMVC/servlet/ajouterVoyage
     @PostMapping("/ajouterVoyage")
     @ResponseBody
     public void ajouterGare(@RequestBody Voyage v) {
@@ -36,14 +31,12 @@ public class RestControllerVoyageur {
     }
 
 
-    ////http://localhost:8083/SpringMVC/servlet/ajouterTrain
     @PostMapping("/ajouterTrain")
     @ResponseBody
     public void ajouterTrain(@RequestBody Train t) {
         itrainservice.ajouterTrain(t);
     }
 
-    ////http://localhost:8083/SpringMVC/servlet/ajouterVoyageur
     @PostMapping("/ajouterVoyageur")
     @ResponseBody
     public void ajouterVoyageur(@RequestBody Voyageur v) {
@@ -65,10 +58,11 @@ public class RestControllerVoyageur {
         return itrainservice.trainPlacesLibres(nomGareDepart);
     }
 
-    @RequestMapping(value = "/ListerTrainsIndirects/{nomgdpt}/{nomgarr}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+/*    @RequestMapping(value = "/ListerTrainsIndirects/{nomgdpt}/{nomgarr}",
+    		method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Train> listerTrainsIndirects(@PathVariable("nomgdpt") Ville nomGareDepart, @PathVariable("nomgarr") Ville nomGareArrivee) {
         return itrainservice.listerTrainsIndirects(nomGareDepart, nomGareArrivee);
-    }
+    }*/
 
     @PutMapping(value = "/DesaffecterVoyageursTrain/{nomgdpt}/{heuredept}")
     public void desaffecterVoyageursTrain(@PathVariable("nomgdpt") Ville nomGareDepart, @PathVariable("nomgarr") Ville nomGareArrivee, @PathVariable("heuredept") double heureDepart) {
