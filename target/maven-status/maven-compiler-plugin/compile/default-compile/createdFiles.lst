@@ -14,5 +14,6 @@ tn/esprit/spring/services/ITrainService.class
 tn/esprit/spring/services/VoyageServiceImpl.class
 tn/esprit/spring/services/IVoyageService.class
 tn/esprit/spring/config/LoggingAspect.class
+tn/esprit/spring/config/SwaggerConfig.class
 tn/esprit/spring/entities/Ville.class
 tn/esprit/spring/entities/Voyageur.class
