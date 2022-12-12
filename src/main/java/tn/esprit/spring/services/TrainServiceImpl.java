@@ -16,12 +16,10 @@ import tn.esprit.spring.entities.Voyageur;
 import java.util.ArrayList;
 import java.util.List;
 
-import tn.esprit.spring.entities.Voyageur;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.text.ParseException;
 
 import org.springframework.scheduling.annotation.Scheduled;
 
@@ -40,14 +38,22 @@ public class TrainServiceImpl implements ITrainService {
     VoyageRepository voyageRepository;
 
 
-    public void ajouterTrain(Train t) {
+    public Train ajouterTrain(Train t) {
 
-        trainRepository.save(t);
+        return trainRepository.save(t);
     }
 
     public void supprimerTrain(Train t) {
         trainRepository.delete(t);
     }
+    
+    @Override
+	public Train deleteSTrain(Long trainId) {
+    	
+    	trainRepository.deleteById(trainId);
+		return trainRepository.findById(trainId).orElse(null);
+
+	}
 
     public int TrainPlacesLibres(Ville nomGareDepart) {
         int cpt = 0;

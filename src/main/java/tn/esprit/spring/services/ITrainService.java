@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface ITrainService {
-     void ajouterTrain(Train t);
+     Train ajouterTrain(Train t);
      void affecterTainAVoyageur(Long   idVoyageur, Ville nomGareDepart, Ville nomGareArrivee,  double heureDepart);
      int TrainPlacesLibres(Ville nomGareDepart);
      List<Train> ListerTrainsIndirects(Ville nomGareDepart, Ville nomGareArrivee);
@@ -14,4 +14,5 @@ public interface ITrainService {
      void TrainsEnGare();
      List<Train> recupererAll();
      void supprimerTrain(Train t);
+     Train deleteSTrain(Long trainId) ;
 }
